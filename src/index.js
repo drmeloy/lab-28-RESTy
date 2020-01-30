@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
-import App from './components/App';
+import RESTy from './containers/RESTy';
 
 render(
-  <App />,
+  <RESTy />,
   document.getElementById('root')
 );
