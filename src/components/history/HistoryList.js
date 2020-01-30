@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import HistoryItem from './HistoryItem';
 
-const HistoryList = ({ HistoryList }) => {
-  const historyItems = HistoryList.map(item => {
+const HistoryList = ({ historyList }) => {
+  const historyItems = historyList.map(item => {
     <li key={Math.random * 1000}>
       <HistoryItem {...item} />
     </li>

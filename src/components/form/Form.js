@@ -8,11 +8,11 @@ const Form = ({ url, method, requestBody, username, password, token, onChange, o
         <input className='url-input' type='text' name='url' placeholder='URL' value={url} onChange={onChange} />
       </div>
       <div className='methods'>
-        <input className='method-selector' type='radio' name='method' value='get' checked={method === 'get'} onChange={onChange}>GET</input>
-        <input className='method-selector' type='radio' name='method' value='post' checked={method === 'post'} onChange={onChange}>POST</input>
-        <input className='method-selector' type='radio' name='method' value='put' checked={method === 'put'} onChange={onChange}>PUT</input>
-        <input className='method-selector' type='radio' name='method' value='patch' checked={method === 'patch'} onChange={onChange}>PATCH</input>
-        <input className='method-selector' type='radio' name='method' value='delete' checked={method === 'delete'} onChange={onChange}>DELETE</input>
+        <input className='method-selector' type='radio' name='method' value='GET' checked={method === 'GET'} onChange={onChange}>GET</input>
+        <input className='method-selector' type='radio' name='method' value='POST' checked={method === 'POST'} onChange={onChange}>POST</input>
+        <input className='method-selector' type='radio' name='method' value='PUT' checked={method === 'PUT'} onChange={onChange}>PUT</input>
+        <input className='method-selector' type='radio' name='method' value='PATCH' checked={method === 'PATCH'} onChange={onChange}>PATCH</input>
+        <input className='method-selector' type='radio' name='method' value='DELETE' checked={method === 'DELETE'} onChange={onChange}>DELETE</input>
         <button className='form-submit' type='submit'>Go!</button>
       </div>
       <textarea placeholder='Raw JSON Body' name='requestBody' value={requestBody} onChange={onChange}></textarea>
