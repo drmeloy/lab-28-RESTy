@@ -25,16 +25,16 @@ export default class RESTy extends Component {
     this.setState({ [target.name]: target.value });
   }
 
-  handleSubmit = async() => {
+  handleSubmit = event => {
     event.preventDefault();
 
-    // const { method, headers, url, requestBody } = this.state;
-    // this.setState({ historyList: [...historyList, {
-    //   method,
-    //   headers,
-    //   url,
-    //   requestBody
-    // }] });
+    const { method, headers, url, requestBody, historyList } = this.state;
+    this.setState(() => ({ historyList: [...historyList, {
+      method,
+      headers,
+      url,
+      requestBody
+    }] }));
 
     fetch(this.state.url)
       .then(res => res.json())

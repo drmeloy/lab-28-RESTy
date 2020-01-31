@@ -12,7 +12,7 @@ const HistoryItem = ({ method, headers, url, requestBody }) => (
 
 HistoryItem.propTypes = {
   method: PropTypes.string.isRequired,
-  headers: PropTypes.string,
+  headers: PropTypes.array,
   url: PropTypes.string.isRequired,
   requestBody: PropTypes.string
 };
