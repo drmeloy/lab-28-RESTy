@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReactJson from 'react-json-view';
 
-const ResResponse = ({ response }) => {
+const ResResponse = ({ responseBody }) => {
+  console.log(responseBody);
+
   return (
     <details>
       <summary>"Response" : </summary>
-      <p></p>
+      <ReactJson src={responseBody} />
     </details>
   );
 }

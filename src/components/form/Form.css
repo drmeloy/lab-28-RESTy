@@ -1,0 +1,59 @@
+.Form {
+  grid-area: form;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 40px 40px 1fr;
+  grid-template-areas: 
+    "url url"
+    "methods methods"
+    "reqbody auth";
+  border: 1px solid;
+  margin: 10px;
+  padding: 10px;
+  background: #ffffff4a;
+  border-radius: 25px;
+  font-family: 'Oswald', sans-serif;
+}
+
+.url{
+  grid-area: url;
+
+  input {
+    width: 90%;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-size: .75rem;
+    background: #ffffffa8;
+    font-family: 'Oswald', sans-serif;
+  }
+}
+
+.methods {
+  grid-area: methods;
+}
+
+.reqbody {
+  grid-area: reqbody;
+  margin: 10px 10px 0 0;
+  padding: 5px;
+  border-radius: 12px;
+  background: #ffffffa8;
+  font-family: 'Oswald', sans-serif;
+}
+
+.auth {
+  grid-area: auth;
+
+  input {
+    margin: 0 10px 10px 0;
+    border-radius: 5px;
+    font-size: .75rem;
+    background: #ffffffa8;
+    font-family: 'Oswald', sans-serif;
+    padding-left: 5px;
+  }
+
+  p {
+    margin-bottom: 5px;
+  }
+}

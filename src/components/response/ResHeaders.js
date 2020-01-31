@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ResHeaders = ({ username, password, token }) => {
+const ResHeaders = ({ headers }) => {
   return (
     <details>
       <summary>"Headers" : </summary>
-      <p>Username: {username}</p>
-      <p>Password: {password}</p>
-      <p>Bearer Token: {token}</p>
+      <p>{headers}</p>
     </details>
   );
 };

@@ -1,0 +1,12 @@
+header {
+  grid-area: header;
+  background-image: url("../../assets/trianglify-lowres.png");
+  background-size: cover;
+  height: 150px;
+  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  font-family: 'Zhi Mang Xing', cursive;
+}

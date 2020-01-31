@@ -1,0 +1,11 @@
+.History {
+  grid-area: history;
+  border: 1px solid;
+  margin: 10px;
+  background: #ffffff4a;
+  border-radius: 25px;
+
+  h2 {
+    text-align: center;
+  }
+}

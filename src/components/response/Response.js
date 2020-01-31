@@ -2,20 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ResHeaders from './ResHeaders';
 import ResResponse from './ResResponse';
+import styles from './Response.css';
 
 const Response = ({ headers, responseBody }) => {
   return (
-    <div className='response-section'>
+    <div className={styles.Response}>
       <ResHeaders {...headers} />
-      <ResResponse {...responseBody} />
+      <ResResponse responseBody={responseBody} />
     </div>
   );
-};
-
-Response.propTypes = {
-  headers: PropTypes.shape({
-
-  }).
 };
 
 export default Response;

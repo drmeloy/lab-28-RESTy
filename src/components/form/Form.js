@@ -1,27 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Form.css';
 
 const Form = ({ url, method, requestBody, username, password, token, onChange, onSubmit }) => {
   return (
-    <form onSubmit={onSubmit}>
-      <div>
-        <input className='url-input' type='text' name='url' placeholder='URL' value={url} onChange={onChange} />
+    <form className={styles.Form} onSubmit={onSubmit}>
+      <div className={styles.url}>
+        <input type='text' name='url' placeholder='URL' value={url} onChange={onChange}></input>
       </div>
-      <div className='methods'>
-        <input className='method-selector' type='radio' name='method' value='GET' checked={method === 'GET'} onChange={onChange}>GET</input>
-        <input className='method-selector' type='radio' name='method' value='POST' checked={method === 'POST'} onChange={onChange}>POST</input>
-        <input className='method-selector' type='radio' name='method' value='PUT' checked={method === 'PUT'} onChange={onChange}>PUT</input>
-        <input className='method-selector' type='radio' name='method' value='PATCH' checked={method === 'PATCH'} onChange={onChange}>PATCH</input>
-        <input className='method-selector' type='radio' name='method' value='DELETE' checked={method === 'DELETE'} onChange={onChange}>DELETE</input>
+      <div className={styles.methods}>
+        <label>GET
+          <input className='method-selector' type='radio' name='method' value='GET' checked={method === 'GET'} onChange={onChange}></input>
+        </label>
+        <label>POST
+          <input className='method-selector' type='radio' name='method' value='POST' checked={method === 'POST'} onChange={onChange}></input>
+        </label>
+        <label>PUT
+          <input className='method-selector' type='radio' name='method' value='PUT' checked={method === 'PUT'} onChange={onChange}></input>
+        </label>
+        <label>PATCH
+          <input className='method-selector' type='radio' name='method' value='PATCH' checked={method === 'PATCH'} onChange={onChange}></input>
+        </label>
+        <label>DELETE
+          <input className='method-selector' type='radio' name='method' value='DELETE' checked={method === 'DELETE'} onChange={onChange}></input>
+        </label>
         <button className='form-submit' type='submit'>Go!</button>
       </div>
-      <textarea placeholder='Raw JSON Body' name='requestBody' value={requestBody} onChange={onChange}></textarea>
-      <div className='auth-section'>Basic Authorization
-        <input className='username' type='text' name='username' placeholder='Username' value={username} onChange={onChange} />
-        <input className='password' type='password' name='password' placeholder='Password' value={password} onChange={onChange} />
-      </div>
-      <div className='bearer-token'>Bearer Token
-        <input className='text' type='text' name='token' placeholder='Bearer Token' value={token} onChange={onChange} />
+      <textarea className={styles.reqbody} placeholder='Raw JSON Body' name='requestBody' value={requestBody} onChange={onChange}></textarea>
+      <div className={styles.auth}>
+        <p>Basic Authorization</p>
+        <input className='username' type='text' name='username' placeholder='Username' value={username} onChange={onChange}></input>
+        <input className='password' type='password' name='password' placeholder='Password' value={password} onChange={onChange}></input>
+        <p>Bearer Token</p>
+        <input className='text' type='text' name='token' placeholder='Bearer Token' value={token} onChange={onChange}></input>
       </div>
     </form>
   );

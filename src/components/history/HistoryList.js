@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import HistoryItem from './HistoryItem';
+import styles from './HistoryList.css';
 
 const HistoryList = ({ historyList }) => {
   const historyItems = historyList.map(item => {
@@ -10,12 +11,12 @@ const HistoryList = ({ historyList }) => {
   });
 
   return (
-    <>
-      <h3>History</h3>
+    <div className={styles.History}>
+      <h2>History</h2>
       <ul>
         {historyItems}
       </ul>
-    </>
+    </div>
   );
 }
 
@@ -25,5 +26,7 @@ HistoryList.propTypes = {
     headers: PropTypes.string,
     url: PropTypes.string.isRequired,
     requestBody: PropTypes.string
-  })).isRequired
+  }))
 }
+
+export default HistoryList;

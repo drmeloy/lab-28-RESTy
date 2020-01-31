@@ -1,7 +1,8 @@
 import React from 'react';
+import './Header.css';
 
 const Header = () => (
-  <header>RESTy</header>
+  <header>DREAMy</header>
 );
 
 export default Header;

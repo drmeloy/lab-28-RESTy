@@ -1,8 +1,9 @@
 import React from 'react';
 import { render } from 'react-dom';
-import RESTy from './containers/RESTy';
+import App from './components/App';
+import './index.css'
 
 render(
-  <RESTy />,
+  <App />,
   document.getElementById('root')
 );
