@@ -5,7 +5,8 @@
   background: #ffffff4a;
   border-radius: 25px;
 
-  h2 {
+  h1 {
     text-align: center;
+    font-family: 'Oswald', sans-serif;
   }
 }
