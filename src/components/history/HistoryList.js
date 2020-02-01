@@ -4,11 +4,11 @@ import HistoryItem from './HistoryItem';
 import styles from './HistoryList.css';
 
 const HistoryList = ({ historyList }) => {
-  const historyItems = historyList.map(item => {
-    <li key={Math.random * 1000}>
-      <HistoryItem {...item} />
+  const historyItems = historyList.map(item => (    
+    <li key={'hi'}>
+      <HistoryItem method={item.method} headers={item.headers} url={item.url} requestBody={item.requestBody} />
     </li>
-  });
+  ));
 
   return (
     <div className={styles.History}>

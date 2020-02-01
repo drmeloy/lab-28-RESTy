@@ -4,9 +4,16 @@
   margin: 10px;
   background: #ffffff4a;
   border-radius: 25px;
+  overflow: auto;
 
   h1 {
     text-align: center;
     font-family: 'Oswald', sans-serif;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 }

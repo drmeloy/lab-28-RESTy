@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './HistoryItem.css';
 
-const HistoryItem = ({ method, headers, url, requestBody }) => (
-    <div className='history-item'>
-      <p className='method'>{method}</p>
-      <p className='headers'>{headers}</p>
-      <p className='url'>{url}</p>
-      <p className='request-body'>{requestBody}</p>
+const HistoryItem = ({ method, headers, url, requestBody }) => {  
+return (
+    <div className={styles.HistoryItem}>
+      <p className='method'>METHOD: {method}</p>
+      <p className='url'>URL: {url}</p>
+      <p className='request-body'>BODY: {requestBody}</p>
     </div>
-);
+)};
 
 HistoryItem.propTypes = {
   method: PropTypes.string.isRequired,
