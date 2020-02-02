@@ -4,6 +4,7 @@ import Footer from '../components/footer/Footer';
 import HistoryList from '../components/history/HistoryList';
 import Form from '../components/form/Form';
 import Response from '../components/response/Response';
+import Loader from '../components/loader/Loader';
 import styles from './RESTy.css';
 
 export default class RESTy extends Component {
@@ -15,10 +16,13 @@ export default class RESTy extends Component {
     historyList: [],
     token: '',
     username: '',
-    password: ''
+    password: '',
+    loading: false
   }
 
   fetch = async() => {
+    this.setState({ loading: true });
+
     const { method, url, requestBody, token, username, password } = this.state;
     const options = {};
 
@@ -35,14 +39,9 @@ export default class RESTy extends Component {
       options.headers.Authorization = 'Basic ' + username + ':' + password;
     }
 
-    const response = await fetch(url, options);
-    const data = await response.json();
-    if(response.ok){
-      this.setState({ responseBody: data });
-    }
-    else {
-      throw data.error;
-    }
+    fetch(url, options)
+      .then(res => res.json())
+      .then(data => this.setState({ responseBody: data, loading: false }));
   }
 
   handleChange = ({ target }) => {
@@ -67,10 +66,13 @@ export default class RESTy extends Component {
   }
 
   render(){
-    const { historyList, url, method, requestBody, username, password, token, responseBody } = this.state;
+    const { historyList, url, method, requestBody, username, password, token, responseBody, loading } = this.state;
+
+    // if(loading) return <img src={loader} alt='loader'></img>;
 
     return (
       <div className={styles.RESTy}>
+        <Loader loading={loading} />
         <Header className={styles.Header}/>
         <HistoryList className={styles.History} historyList={historyList} onClick={this.historyClick} />
         <Form className={styles.Form} url={url} method={method} requestBody={requestBody} username={username} password={password} token={token} onChange={this.handleChange} onSubmit={this.handleSubmit} />
