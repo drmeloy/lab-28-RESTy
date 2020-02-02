@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './HistoryItem.css';
 
-const HistoryItem = ({ method, headers, url, requestBody }) => {  
+const HistoryItem = ({ method, url, requestBody }) => {  
 return (
     <div className={styles.HistoryItem}>
       <p className='method'>METHOD: {method}</p>
@@ -13,7 +13,6 @@ return (
 
 HistoryItem.propTypes = {
   method: PropTypes.string.isRequired,
-  headers: PropTypes.array,
   url: PropTypes.string.isRequired,
   requestBody: PropTypes.string
 };

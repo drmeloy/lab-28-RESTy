@@ -4,13 +4,17 @@ import ResHeaders from './ResHeaders';
 import ResResponse from './ResResponse';
 import styles from './Response.css';
 
-const Response = ({ headers, responseBody }) => {
+const Response = ({ responseBody }) => {
   return (
     <div className={styles.Response}>
-      <ResHeaders {...headers} />
+      <ResHeaders />
       <ResResponse responseBody={responseBody} />
     </div>
   );
+};
+
+Response.propTypes = {
+  responseBody: PropTypes.object
 };
 
 export default Response;
