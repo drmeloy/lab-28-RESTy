@@ -13,6 +13,10 @@
   background: #ffffff4a;
   border-radius: 25px;
   font-family: 'Oswald', sans-serif;
+
+  textarea:disabled {
+    background: #bbb9b9;
+  }
 }
 
 .url{
@@ -30,6 +34,46 @@
 
 .methods {
   grid-area: methods;
+  
+  input[type='radio'] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+  }
+
+  label {
+    display: inline-block;
+    background-image: url('../../assets//trianglify-lowres\ \(4\).png');
+    padding: 10px 20px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    border: 1px solid #FF5722;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  input[type='radio']:checked + label {
+    background-image: url('../../assets//trianglify-lowres\ \(5\).png');
+    color: white;
+    border: 1px solid white;
+  }
+
+  button {
+    background-image: url('../../assets/trianglify-lowres\ \(6\).png');
+    height: 34px;
+    width: 90px;
+    border: 1px solid #07d507;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  button:active {
+    background-image: url('../../assets/trianglify-lowres\ \(7\).png');
+    color: white;
+    border: 1px solid white;
+  }
 }
 
 .reqbody {

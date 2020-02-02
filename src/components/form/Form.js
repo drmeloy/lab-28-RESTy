@@ -2,31 +2,27 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Form.css';
 
-const Form = ({ url, method, requestBody, username, password, token, onChange, onSubmit }) => {
+const Form = ({ url, method, requestBody, username, password, token, onChange, onSubmit, clearForm }) => {
   return (
     <form className={styles.Form} onSubmit={onSubmit}>
       <div className={styles.url}>
-        <input type='text' name='url' placeholder='URL' value={url} onChange={onChange}></input>
+        <input required type='text' name='url' placeholder='URL' value={url} onChange={onChange}></input>
       </div>
       <div className={styles.methods}>
-        <label>GET
-          <input className='method-selector' type='radio' name='method' value='GET' checked={method === 'GET'} onChange={onChange}></input>
-        </label>
-        <label>POST
-          <input className='method-selector' type='radio' name='method' value='POST' checked={method === 'POST'} onChange={onChange}></input>
-        </label>
-        <label>PUT
-          <input className='method-selector' type='radio' name='method' value='PUT' checked={method === 'PUT'} onChange={onChange}></input>
-        </label>
-        <label>PATCH
-          <input className='method-selector' type='radio' name='method' value='PATCH' checked={method === 'PATCH'} onChange={onChange}></input>
-        </label>
-        <label>DELETE
-          <input className='method-selector' type='radio' name='method' value='DELETE' checked={method === 'DELETE'} onChange={onChange}></input>
-        </label>
+        <input className='method-selector' id={'GET'}type='radio' name='method' value='GET' checked={method === 'GET'} onChange={onChange}></input>
+        <label htmlFor='GET'>GET</label>
+        <input className='method-selector' id='POST' type='radio' name='method' value='POST' checked={method === 'POST'} onChange={onChange}></input>
+        <label htmlFor='POST'>POST</label>
+        <input className='method-selector' id='PUT' type='radio' name='method' value='PUT' checked={method === 'PUT'} onChange={onChange}></input>
+        <label htmlFor='PUT'>PUT</label>
+        <input className='method-selector' id='PATCH' type='radio' name='method' value='PATCH' checked={method === 'PATCH'} onChange={onChange}></input>
+        <label htmlFor='PATCH'>PATCH</label>
+        <input className='method-selector' id='DELETE' type='radio' name='method' value='DELETE' checked={method === 'DELETE'} onChange={onChange}></input>
+        <label htmlFor='DELETE'>DELETE</label>
         <button className='form-submit' type='submit'>Go!</button>
+        <button className='clear-button' type='reset' onClick={clearForm}>Clear All</button>
       </div>
-      <textarea className={styles.reqbody} placeholder='Raw JSON Body' name='requestBody' value={requestBody} onChange={onChange}></textarea>
+      <textarea disabled={method === 'GET' || method === 'DELETE'} className={styles.reqbody} placeholder='Raw JSON Body' name='requestBody' value={requestBody} onChange={onChange}></textarea>
       <div className={styles.auth}>
         <p>Basic Authorization</p>
         <input className='username' type='text' name='username' placeholder='Username' value={username} onChange={onChange}></input>

@@ -65,17 +65,29 @@ export default class RESTy extends Component {
     this.setState({ url, method, requestBody }, this.fetch);
   }
 
+  clearForm = () => {
+    this.setState({
+      url: '',
+      method: 'GET',
+      requestBody: '',
+      responseBody: {},
+      historyList: [],
+      token: '',
+      username: '',
+      password: '',
+      loading: false
+    });
+  }
+
   render(){
     const { historyList, url, method, requestBody, username, password, token, responseBody, loading } = this.state;
-
-    // if(loading) return <img src={loader} alt='loader'></img>;
 
     return (
       <div className={styles.RESTy}>
         <Loader loading={loading} />
         <Header className={styles.Header}/>
         <HistoryList className={styles.History} historyList={historyList} onClick={this.historyClick} />
-        <Form className={styles.Form} url={url} method={method} requestBody={requestBody} username={username} password={password} token={token} onChange={this.handleChange} onSubmit={this.handleSubmit} />
+        <Form className={styles.Form} url={url} method={method} requestBody={requestBody} username={username} password={password} token={token} onChange={this.handleChange} onSubmit={this.handleSubmit} clearForm={this.clearForm} />
         <Response className={styles.Response} responseBody={responseBody} />
         <Footer className={styles.Footer}/>
       </div>  
