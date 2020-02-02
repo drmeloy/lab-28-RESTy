@@ -9,7 +9,7 @@ exports[`HistoryList component renders HistoryList 1`] = `
   </h1>
   <ul>
     <li
-      key="991.9282160463782"
+      key="0"
     >
       <HistoryItem
         method="GET"

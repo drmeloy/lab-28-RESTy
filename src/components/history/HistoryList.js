@@ -4,8 +4,8 @@ import HistoryItem from './HistoryItem';
 import styles from './HistoryList.css';
 
 const HistoryList = ({ historyList, onClick }) => {
-  const historyItems = historyList.map(item => (    
-    <li key={Math.random() * 1000}>
+  const historyItems = historyList.map((item, i) => (    
+    <li key={i}>
       <HistoryItem {...item} onClick={onClick} />
     </li>
   )).reverse();
