@@ -20,7 +20,7 @@ export default class RESTy extends Component {
     loading: false
   }
 
-  fetch = async() => {
+  fetch = () => {
     this.setState({ loading: true });
 
     const { method, url, requestBody, token, username, password } = this.state;
@@ -48,7 +48,7 @@ export default class RESTy extends Component {
     this.setState({ [target.name]: target.value });
   }
 
-  handleSubmit = async event => {
+  handleSubmit = event => {
     event.preventDefault();
 
     const { method, url, requestBody, historyList } = this.state;

@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResHeaders component renders ResHeaders 1`] = `
+<details>
+  <summary>
+    "Headers" : 
+  </summary>
+  <p />
+</details>
+`;

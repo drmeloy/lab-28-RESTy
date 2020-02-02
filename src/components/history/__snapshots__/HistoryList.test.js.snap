@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HistoryList component renders HistoryList 1`] = `
+<div
+  className="History"
+>
+  <h1>
+    History
+  </h1>
+  <ul>
+    <li
+      key="991.9282160463782"
+    >
+      <HistoryItem
+        method="GET"
+        requestBody=""
+        url="https://swapi.co/api/people/"
+      />
+    </li>
+  </ul>
+</div>
+`;

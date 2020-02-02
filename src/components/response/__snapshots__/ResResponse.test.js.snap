@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResResponse component renders ResResponse  1`] = `
+<details
+  open={false}
+>
+  <summary>
+    "Response" :
+  </summary>
+  <t
+    collapseStringsAfterLength={false}
+    collapsed="2"
+    defaultValue={null}
+    displayDataTypes={false}
+    displayObjectSize={true}
+    enableClipboard={false}
+    groupArraysAfterLength={100}
+    iconStyle="circle"
+    indentWidth={4}
+    name={false}
+    onAdd={false}
+    onDelete={false}
+    onEdit={false}
+    onSelect={false}
+    shouldCollapse={false}
+    sortKeys={false}
+    src={Object {}}
+    style={Object {}}
+    theme="solarized"
+    validationMessage="Validation Error"
+  />
+</details>
+`;
