@@ -62,13 +62,17 @@ export default class RESTy extends Component {
     this.fetch();
   }
 
+  historyClick = (method, url, requestBody) => {
+    this.setState({ url, method, requestBody }, this.fetch);
+  }
+
   render(){
     const { historyList, url, method, requestBody, username, password, token, responseBody } = this.state;
 
     return (
       <div className={styles.RESTy}>
         <Header className={styles.Header}/>
-        <HistoryList className={styles.History} historyList={historyList} />
+        <HistoryList className={styles.History} historyList={historyList} onClick={this.historyClick} />
         <Form className={styles.Form} url={url} method={method} requestBody={requestBody} username={username} password={password} token={token} onChange={this.handleChange} onSubmit={this.handleSubmit} />
         <Response className={styles.Response} responseBody={responseBody} />
         <Footer className={styles.Footer}/>

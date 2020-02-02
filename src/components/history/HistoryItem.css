@@ -5,4 +5,6 @@
   font-family: 'Oswald', sans-serif;
   background-image: url('../../assets/trianglify-lowres\ \(3\).png');
   background-size: cover;
+  word-wrap: break-word;
+  cursor: pointer;
 }

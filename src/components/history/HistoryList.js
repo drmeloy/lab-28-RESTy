@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import HistoryItem from './HistoryItem';
 import styles from './HistoryList.css';
 
-const HistoryList = ({ historyList }) => {
+const HistoryList = ({ historyList, onClick }) => {
   const historyItems = historyList.map(item => (    
     <li key={Math.random() * 1000}>
-      <HistoryItem {...item} />
+      <HistoryItem {...item} onClick={onClick} />
     </li>
-  ));
+  )).reverse();
 
   return (
     <div className={styles.History}>
@@ -18,14 +18,11 @@ const HistoryList = ({ historyList }) => {
       </ul>
     </div>
   );
-}
+};
 
 HistoryList.propTypes = {
-  HistoryList: PropTypes.arrayOf(PropTypes.shape({
-    method: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
-    requestBody: PropTypes.string
-  }))
-}
+  historyList: PropTypes.array,
+  onClick: PropTypes.func.isRequired
+};
 
 export default HistoryList;
