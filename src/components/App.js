@@ -1,6 +1,7 @@
 import React from 'react';
+import RESTy from '../containers/RESTy';
+import styles from './App.css';
 
 export default function App() {
-  return <h1>Hello World</h1>;
+  return <RESTy className={styles.RESTy} />;
 }
-  
